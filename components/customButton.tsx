@@ -2,7 +2,7 @@
 
 import { useSelector, useDispatch } from "react-redux";
 import { useAppSelector, useAppDispatch } from "../redux/hooks";
-import { decrement, increment } from "../redux/features/counterSlice";
+import { decrement, increment, incrementByAmount } from "../redux/features/counterSlice";
 
 export function Counter() {
   // const count = useSelector((state: any) => state.counter.value);
@@ -24,6 +24,12 @@ export function Counter() {
         onClick={() => dispatch(decrement())}
       >
         Decrement
+      </button>
+      <button
+        onClick={() => dispatch(incrementByAmount(5))}
+        aria-label="Increment value by 5"
+      >
+        Increase by amount
       </button>
     </div>
   );
